@@ -11,8 +11,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+p {
+  margin: 0;
+}
+
 .fontBold {
   font-weight: bold;
+}
+
+.fontColorLight {
+  color: #c7c5c5;
+}
+
+.fontSize12 {
+  font-size: 12px;
 }
 
 .fontSize14 {
@@ -31,8 +43,24 @@ body {
   padding: 16px;
 }
 
+.mb8 {
+  margin-bottom: 8px;
+}
+
+.mb16 {
+  margin-bottom: 16px;
+}
+
 .flexApart {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.inlineBlock {
+  display: inline-block;
+}
+
+.cursorPointer {
+  cursor: pointer;
 }

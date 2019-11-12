@@ -1,0 +1,27 @@
+.container {
+  composes: inlineBlock from global;
+  position: relative;
+  /* width: 232px;
+  height: 300px; */
+}
+
+.thumbnail {
+  composes: mb8 cursorPointer from global;
+  height: 220px;
+  width: auto;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50px;
+  width: auto;
+  transform: translate(-50%, -50%);
+  transition: height 0.2s ease-out;
+}
+
+.thumbnail:hover~.play-icon,
+.play-icon:hover {
+  height: 55px;
+}
