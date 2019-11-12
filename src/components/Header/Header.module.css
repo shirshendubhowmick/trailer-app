@@ -1,0 +1,10 @@
+.container {
+  composes: p16 flexApart from global;
+  background-color: black;
+  height: 50px;
+}
+
+.logo-text {
+  composes: fontBold fontSize16 from global;
+  color: white;
+}

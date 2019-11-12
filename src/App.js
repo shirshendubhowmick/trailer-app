@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Header from './components/Header/Header';
+import Main from './containers/Main/Main';
 
 function App() {
-  return (
-    <div className="App" />
+  const [isLoading, setIsLoading] = useState(true);
 
-    // </div>
+  return (
+    <div className="App">
+      <Header />
+      <Main isLoading={isLoading} />
+    </div>
   );
 }
 

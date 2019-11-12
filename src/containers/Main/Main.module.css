@@ -1,0 +1,15 @@
+.container {
+  background-color: #333333;
+  padding-top: 50px;
+  min-height: calc(100vh - 50px);
+  padding: 8px 24px;
+  position: relative;
+}
+
+.loader-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+}
