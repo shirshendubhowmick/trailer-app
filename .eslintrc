@@ -1,0 +1,92 @@
+{
+  "extends": ["airbnb", "airbnb/hooks"],
+  "rules": {
+    // * All JS rules
+    "no-console": "off",
+    "constructor-super": 0,
+    "no-this-before-super": 0,
+    "prefer-rest-params": 0,
+    "no-underscore-dangle": 0,
+    "no-warning-comments": [
+      2,
+      { "terms": ["temp", "no-commit", "dont-commit"], "location": "start" }
+    ],
+    "radix": 0,
+    "import/no-commonjs": [2, { "allowRequire": true }],
+    "global-require": 0,
+    "import/no-dynamic-require": 0,
+    "quote-props": ["error", "consistent-as-needed", { "keywords": true }],
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true,
+        "allowTaggedTemplates": true
+      }
+    ],
+    "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
+    "no-else-return": 0,
+    "no-useless-return": 0,
+    "object-shorthand": ["error", "properties"],
+    "operator-linebreak": ["error", "after"],
+    "import/no-extraneous-dependencies": 0,
+    "prefer-object-spread": 0,
+    "prefer-promise-reject-errors": 0,
+
+    // * All react rules
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "react/prop-types": 0,
+    "react/destructuring-assignment": 0,
+    "react/jsx-boolean-value": ["error", "always"],
+    "react/state-in-constructor": 0,
+    "react/jsx-props-no-spreading": 0,
+
+    // * disable All ARIA rules
+    "jsx-a11y/accessible-emoji": 0,
+    "jsx-a11y/alt-text": 0,
+    "jsx-a11y/anchor-has-content": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/aria-activedescendant-has-tabindex": 0,
+    "jsx-a11y/aria-props": 0,
+    "jsx-a11y/aria-proptypes": 0,
+    "jsx-a11y/aria-role": 0,
+    "jsx-a11y/aria-unsupported-elements": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/heading-has-content": 0,
+    "jsx-a11y/html-has-lang": 0,
+    "jsx-a11y/iframe-has-title": 0,
+    "jsx-a11y/img-redundant-alt": 0,
+    "jsx-a11y/interactive-supports-focus": 0,
+    "jsx-a11y/label-has-associated-control": 0,
+    "jsx-a11y/label-has-for": 0,
+    "jsx-a11y/lang": 0,
+    "jsx-a11y/media-has-caption": 0,
+    "jsx-a11y/mouse-events-have-key-events": 0,
+    "jsx-a11y/no-access-key": 0,
+    "jsx-a11y/no-autofocus": 0,
+    "jsx-a11y/no-distracting-elements": 0,
+    "jsx-a11y/no-interactive-element-to-noninteractive-role": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": 0,
+    "jsx-a11y/no-noninteractive-tabindex": 0,
+    "jsx-a11y/no-onchange": 0,
+    "jsx-a11y/no-redundant-roles": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/role-has-required-aria-props": 0,
+    "jsx-a11y/role-supports-aria-props": 0,
+    "jsx-a11y/scope": 0,
+    "jsx-a11y/tabindex-no-positive": 0,
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "ImportDeclaration[source.value=/.*\\.css/]:matches(!ImportDeclaration[source.value=/.*\\.css/] ~ ImportDeclaration[source.value!=/.*\\.css/])",
+        "message": "CSS imports should be after all other imports"
+      }
+    ]
+  },
+  "env": {
+    "browser": true
+  },
+  "parser": "babel-eslint",
+  "plugins": ["babel"]
+}
