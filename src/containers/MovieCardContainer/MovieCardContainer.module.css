@@ -1,0 +1,25 @@
+.container {
+  composes: mLRAuto from global;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+  max-width: calc((170px * 5) + (16px * 5));
+}
+
+@media (min-width: 768px) and (max-width: 1183px) {
+  .container {
+    max-width: calc((170px * 3) + (16px * 3));
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .container {
+    max-width: calc((170px * 2) + (16px * 2));
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: calc((170px) + (16px));
+  }
+}
