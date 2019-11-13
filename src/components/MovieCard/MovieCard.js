@@ -7,9 +7,11 @@ import './MovieCard.module.css';
 
 const MovieCard = props => (
   <div styleName="container">
-    <img src={`${imageURL}${props.EventCode}.jpg`} alt={props.EventCode} styleName="thumbnail" />
-    <p className="fontColorLight fontSize12">{props.EventTitle}</p>
-    <img src={playIcon} alt="play" styleName="play-icon" />
+    <div styleName="image-container">
+      <img src={`${imageURL}${props.EventCode}.jpg`} alt={props.EventCode} styleName="thumbnail" />
+      <img src={playIcon} alt="play" styleName="play-icon" />
+    </div>
+    <p styleName="movie-name">{props.EventTitle}</p>
   </div>
 );
 

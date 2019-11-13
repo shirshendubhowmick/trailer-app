@@ -9,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #333333;
 }
 
 p {
@@ -43,12 +44,25 @@ p {
   padding: 16px;
 }
 
+.mLRAuto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mr16 {
+  margin-right: 16px;
+}
+
 .mb8 {
   margin-bottom: 8px;
 }
 
 .mb16 {
   margin-bottom: 16px;
+}
+
+.mb24 {
+  margin-bottom: 24px;
 }
 
 .flexApart {

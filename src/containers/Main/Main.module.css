@@ -1,9 +1,10 @@
 .container {
-  background-color: #333333;
+  composes: mLRAuto from global;
   padding-top: 50px;
   min-height: calc(100vh - 50px);
   padding: 8px 24px;
   position: relative;
+  max-width: 1140px;
 }
 
 .loader-container {

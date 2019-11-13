@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Header from './components/Header/Header';
 import Main from './containers/Main/Main';
+import MovieCardContainer from './containers/MovieCardContainer/MovieCardContainer';
 
 import APICallHandler from './services/networkServices';
 
 import { apiURL, apiMap } from './constants';
-import MovieCard from './components/MovieCard/MovieCard';
 
 function App() {
   const languages = useRef(null);
@@ -17,7 +17,7 @@ function App() {
       console.log(res);
       const [languageData, movieData] = res.data;
       languages.current = languageData;
-      movies.current = movieData;
+      movies.current = Object.values(movieData);
       setIsLoading(false);
     }).catch((err) => {
       console.log(err);
@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <Header />
       <Main isLoading={isLoading}>
-        <MovieCard {...movies.current ? movies.current.ET00083045 : {}} />
+        <MovieCardContainer movies={movies.current ? movies.current : []} />
       </Main>
     </div>
   );
