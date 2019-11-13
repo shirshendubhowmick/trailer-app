@@ -1,7 +1,7 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useCallback, useState } from 'react';
 
 import MovieCard from '../../components/MovieCard/MovieCard';
-import useDeviceInfo from '../../Hooks/DeviceInfo/DeviceInfo';
+import useDeviceInfo from '../../Hooks/useDeviceInfo/useDeviceInfo';
 
 import './MovieCardContainer.module.css';
 
@@ -26,13 +26,40 @@ const getRowElementCount = (deviceInfo) => {
 const MovieCardContainer = (props) => {
   const deviceInfo = useDeviceInfo();
   const rowElementCount = useMemo(() => getRowElementCount(deviceInfo), [deviceInfo]);
-  console.log(rowElementCount);
+  const [previewWidgetPosition, setPreviewWidgetPosition] = useState(null);
+  const [clickedEventCode, setClickedEventCode] = useState(null);
+
+  const movieCardOnClickHandler = useCallback((clickedIndex, EventCode) => {
+    const remainder = clickedIndex % rowElementCount;
+    const edgeIndex = remainder ? clickedIndex - (remainder - 1) :
+      (clickedIndex - rowElementCount + 1);
+    setPreviewWidgetPosition(edgeIndex);
+    setClickedEventCode(EventCode);
+  }, [rowElementCount]);
+  console.log(previewWidgetPosition);
+
+  // const finalMovies = rowElementCount ? finalMovies.slice(0, rowElementCount).push(<p>Test</p>)
+  let finalMovies = props.movies;
+
+  if (previewWidgetPosition) {
+    const firstHalf = finalMovies.slice(0, previewWidgetPosition - 1);
+    firstHalf.push({ type: 'preview', EventCode: clickedEventCode });
+    const secondHalf = finalMovies.slice(previewWidgetPosition - 1);
+    finalMovies = firstHalf.concat(secondHalf);
+  }
 
   return (
     <div styleName="container">
       {
-        props.movies.map((movie, idx) => (
-          <MovieCard {...movie} key={movie.EventCode} index={idx} />
+        finalMovies.map((item, idx) => (
+          item.type && item.type === 'preview' ? <p key={`preview-${clickedEventCode}`}>Test</p> : (
+            <MovieCard
+              {...item}
+              key={item.EventCode}
+              index={previewWidgetPosition && (idx + 1 > previewWidgetPosition) ? idx : idx + 1}
+              onClickHandler={movieCardOnClickHandler}
+            />
+          )
         ))
       }
       {/* <p></p> */}

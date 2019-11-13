@@ -7,7 +7,7 @@ import './MovieCard.module.css';
 
 const MovieCard = props => (
   <div styleName="container">
-    <div styleName="image-container">
+    <div styleName="image-container" onClick={() => props.onClickHandler(props.index, props.EventCode)}>
       <img src={`${imageURL}${props.EventCode}.jpg`} alt={props.EventCode} styleName="thumbnail" />
       <img src={playIcon} alt="play" styleName="play-icon" />
     </div>
