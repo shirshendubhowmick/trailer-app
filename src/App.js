@@ -3,9 +3,10 @@ import Header from './components/Header/Header';
 import Main from './containers/Main/Main';
 import MovieCardContainer from './containers/MovieCardContainer/MovieCardContainer';
 
-import APICallHandler from './services/networkServices';
+// import APICallHandler from './services/networkServices';
 
-import { apiURL, apiMap } from './constants';
+// import { apiURL, apiMap } from './constants';
+import response from './constants/data.json';
 
 function App() {
   const languages = useRef(null);
@@ -14,16 +15,20 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    APICallHandler('GET', apiURL + apiMap.movieData).then((res) => {
-      console.log(res);
-      const [languageData, movieData] = res.data;
-      languages.current = languageData;
-      moviesArray.current = Object.values(movieData);
-      moviesObj.current = movieData;
-      setIsLoading(false);
-    }).catch((err) => {
-      console.log(err);
-    });
+    // * changed from API call to static file because of CORS issue
+    // APICallHandler('GET', apiURL + apiMap.movieData)
+    Promise.resolve()
+      .then((res) => {
+        console.log(res);
+        // const [languageData, movieData] = res.data;
+        const [languageData, movieData] = response;
+        languages.current = languageData;
+        moviesArray.current = Object.values(movieData);
+        moviesObj.current = movieData;
+        setIsLoading(false);
+      }).catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   return (
