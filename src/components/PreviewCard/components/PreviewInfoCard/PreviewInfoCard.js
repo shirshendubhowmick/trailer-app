@@ -44,7 +44,7 @@ const PreviewInfoCard = (props) => {
         <p className="fontSize12 fontColorLight mb8">Some movie description</p>
         <p className="fontSize12 fontColorGreen">Read more</p>
       </div>
-      <div className="flexApart fontSize12 pl24 pr24">
+      <div className="flexApart fontSize12 pl24 pr24" styleName="ratings-container">
         <span className="fontColorGreen textAlignCenter">
           <span>
             WILL WATCH

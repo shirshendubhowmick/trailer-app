@@ -30,11 +30,21 @@
   height: 100%;
 }
 
-@keyframes :global(fadein) {
-  from {
-    opacity: 0;
+.youtube-frame {
+  width: 50%;
+  height: 316px;
+}
+
+
+@media (max-width: 767px) {
+  .container {
+    height: auto;
   }
-  to {
-    opacity: 1;
+  .content {
+    flex-direction: column;
+    padding: 8px
+  }
+  .youtube-frame {
+    width: 100%;
   }
 }
