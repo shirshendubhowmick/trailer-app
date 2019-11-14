@@ -1,5 +1,16 @@
 .container {
+  composes: p16 from global;
   width: calc(50% - 24px);
   height: 100%;
   background-color: rgba(51, 51, 51, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.genre-tags {
+  composes: p4 fontColorLight inlineBlock fontSize12 mr8 mb16 from global;
+  border-radius: 20px;
+  border: 1px solid #c7c5c5;
+  text-align: center;
 }

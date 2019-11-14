@@ -1,8 +1,8 @@
 .container {
   composes: animationFadein mr16 mb24 from global;
   width: 100%;
-  padding: 16px 24px;
-  height: 450px;
+  padding: 0px;
+  height: 316px;
   margin-right: 16px;
   margin-bottom: 24px;
   background-repeat: no-repeat;

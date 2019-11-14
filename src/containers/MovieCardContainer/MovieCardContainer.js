@@ -3,7 +3,6 @@ import React, { useMemo, useCallback, useState } from 'react';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import useDeviceInfo from '../../Hooks/useDeviceInfo/useDeviceInfo';
 import PreviewCard from '../../components/PreviewCard/PreviewCard';
-import { getYoutubeVideoID } from '../../utils';
 
 import './MovieCardContainer.module.css';
 
@@ -55,7 +54,11 @@ const MovieCardContainer = (props) => {
       {
         finalMovies.map((item, idx) => (
           item.type && item.type === 'preview' ? (
-            <PreviewCard key={`preview-${clickedEventCode}`} eventCode={clickedEventCode} youtubeVideoCode={getYoutubeVideoID(props.moviesObj[clickedEventCode].TrailerURL)} />
+            <PreviewCard
+              key={`preview-${clickedEventCode}`}
+              eventCode={clickedEventCode}
+              movieData={props.moviesObj[clickedEventCode]}
+            />
           ) : (
             <MovieCard
               {...item}

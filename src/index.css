@@ -16,6 +16,10 @@ p {
   margin: 0;
 }
 
+h3 {
+  margin: 0;
+}
+
 .fontBold {
   font-weight: bold;
 }
@@ -23,6 +27,23 @@ p {
 .fontColorLight {
   color: #c7c5c5;
 }
+
+.fontColorWhite {
+  color: white;
+}
+
+.fontColorGreen {
+  color: #488a48;
+}
+
+.fontColorAmber {
+  color: #dbac12
+}
+
+.fontColorRed {
+  color: #cf3303
+}
+
 
 .fontSize12 {
   font-size: 12px;
@@ -40,8 +61,20 @@ p {
   font-size: 18px;
 }
 
+.p4 {
+  padding: 4px;
+}
+
 .p16 {
   padding: 16px;
+}
+
+.pl24 {
+  padding-left: 24px;
+}
+
+.pr24 {
+  padding-right: 24px;
 }
 
 .mLRAuto {
@@ -49,9 +82,18 @@ p {
   margin-right: auto;
 }
 
+.mr8 {
+  margin-right: 8px;
+}
+
 .mr16 {
   margin-right: 16px;
 }
+
+.mr24 {
+  margin-right: 16px;
+}
+
 
 .mb8 {
   margin-bottom: 8px;
@@ -77,6 +119,14 @@ p {
 
 .cursorPointer {
   cursor: pointer;
+}
+
+.textCapitalize {
+  text-transform: capitalize;
+}
+
+.textAlignCenter {
+  text-align: center;
 }
 
 .animationFadein {
