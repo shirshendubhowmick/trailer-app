@@ -9,7 +9,8 @@ import { apiURL, apiMap } from './constants';
 
 function App() {
   const languages = useRef(null);
-  const movies = useRef(null);
+  const moviesArray = useRef(null);
+  const moviesObj = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -17,7 +18,8 @@ function App() {
       console.log(res);
       const [languageData, movieData] = res.data;
       languages.current = languageData;
-      movies.current = Object.values(movieData);
+      moviesArray.current = Object.values(movieData);
+      moviesObj.current = movieData;
       setIsLoading(false);
     }).catch((err) => {
       console.log(err);
@@ -28,7 +30,10 @@ function App() {
     <div className="App">
       <Header />
       <Main isLoading={isLoading}>
-        <MovieCardContainer movies={movies.current ? movies.current : []} />
+        <MovieCardContainer
+          movies={moviesArray.current ? moviesArray.current : []}
+          moviesObj={moviesObj.current}
+        />
       </Main>
     </div>
   );

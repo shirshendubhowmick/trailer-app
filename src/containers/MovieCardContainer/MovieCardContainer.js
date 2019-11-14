@@ -13,6 +13,18 @@ const deviceRowElementMap = {
   mobile: 1,
 };
 
+function getYoutubeVideoID(url) {
+  // eslint-disable-next-line no-useless-escape
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+
+  if (match && match[2].length === 11) {
+    return match[2];
+  } else {
+    return 'error';
+  }
+}
+
 const getRowElementCount = (deviceInfo) => {
   let rowElementCount;
 
@@ -54,7 +66,7 @@ const MovieCardContainer = (props) => {
       {
         finalMovies.map((item, idx) => (
           item.type && item.type === 'preview' ? (
-            <PreviewCard key={`preview-${clickedEventCode}`} eventCode={clickedEventCode} />
+            <PreviewCard key={`preview-${clickedEventCode}`} eventCode={clickedEventCode} youtubeVideoCode={getYoutubeVideoID(props.moviesObj[clickedEventCode].TrailerURL)} />
           ) : (
             <MovieCard
               {...item}
