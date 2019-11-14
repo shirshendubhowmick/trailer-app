@@ -24,6 +24,7 @@
 @media (max-width: 480px) {
   .container {
     width: unset;
-    max-width: calc((170px) + (16px));
+    /* max-width: calc((170px) + (16px)); */
+    justify-content: center;
   }
 }
