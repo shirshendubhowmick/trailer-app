@@ -39,7 +39,6 @@ const MovieCardContainer = (props) => {
     setPreviewWidgetPosition(edgeIndex);
     setClickedEventCode(EventCode);
   }, [rowElementCount]);
-  console.log(previewWidgetPosition);
 
   // const finalMovies = rowElementCount ? finalMovies.slice(0, rowElementCount).push(<p>Test</p>)
   let finalMovies = props.movies;
