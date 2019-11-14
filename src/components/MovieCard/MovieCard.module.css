@@ -27,6 +27,7 @@
 .thumbnail:hover~.play-icon,
 .play-icon:hover {
   height: 55px;
+  cursor: pointer;
 }
 
 .movie-name {
